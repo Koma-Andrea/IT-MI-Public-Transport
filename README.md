@@ -29,28 +29,28 @@ Connection detail (using markdown custom card, displayed as popup-card)
 ### MANUAL INSTALLATION
 1. Download the
    [latest release](https://github.com/bruxy70/CZ-Public-Transport/releases/latest).
-2. Unpack the release and copy the `custom_components/cz_pub_tran` directory
+2. Unpack the release and copy the `custom_components/it_atm_pub_tran` directory
    into the `custom_components` directory of your Home Assistant
    installation.
-3. Configure the `cz_pub_tran` sensor.
+3. Configure the `it_atm_pub_tran` sensor.
 4. Restart Home Assistant.
 
 ### INSTALLATION VIA HACS
 1. Ensure that [HACS](https://custom-components.github.io/hacs/) is installed.
 2. Search for and install the "CZ Public Transport" integration.
-3. Configure the `cz_pub_tran` sensor.
+3. Configure the `it_atm_pub_tran` sensor.
 4. Restart Home Assistant.
 
 ## Configuration
 There are 2 ways to configure the integration:
 1. Using *Config Flow*: in `Configuration/Integrations` click on the `+` button, select `CZ Public Transport` and configure the sensor (prefered). If you configure the integration using Config Flow, you can change the entity_name, name and change the sensor parameters from the Integrations configuration. The changes are instant and do not require HA restart.
-2. Using *YAML*: Add `cz_pub_tran` sensor in your `configuration.yaml` as per the example below:
+2. Using *YAML*: Add `it_atm_pub_tran` sensor in your `configuration.yaml` as per the example below:
 
 Or you can use combination of both. The configuration of `user_id`, `detail_format`, `scan_interval` and `force_refresh_period` is currently possible only in *YAML*. To configure these, only add these paramaters and no `sensors` configuration, then configure sensors using Home Assistant GUI.
 
 ```yaml
 # Simple example of configuration.yaml (sensors will be named automatically)
-cz_pub_tran:
+it_atm_pub_tran:
   sensors:
     - origin: "Zbraslavské náměstí"
       destination: "Poliklinika Barrandov"
@@ -58,7 +58,7 @@ cz_pub_tran:
       destination: "Florenc"
 
 # Complex example of configuration.yaml
-cz_pub_tran:
+it_atm_pub_tran:
   user_id: <no idea where to get one>
   scan_interval: 120
   force_refresh_period: 0
@@ -76,12 +76,12 @@ cz_pub_tran:
 ### CONFIGURATION PARAMETERS
 | Attribute | Optional | Description
 |:---------|-----------|-----------
-| `cz_pub_tran` | No | This is the platform name
+| `it_atm_pub_tran` | No | This is the platform name
 | `user_id` | Yes | ...if you have one (if you do, please let me know where you got it. Thanks!). Otherwise it will use the trial account. 
 | `scan_interval` | Yes | The sensor refresh rate (seconds)<br/>**Default**: 60
 | `force_refresh_period` | Yes | The sensor will skip update if there is already scheduled connection. But, every n-th refresh, it will force the update, to check delay changes. This can be disabled by setting this to 0.<br/>**Default**: 5  **Range**: 0-60
 | `description_format` | Yes | The **description** attribute can be rendered in 2 different formats:<br/>- **text**: plain text, each connection on 1 line (**default**)<br/>- **HTML**: HTML table
-| `name` | Yes | Sensor friendly name.<br/>**Default**: cz_pub_tran
+| `name` | Yes | Sensor friendly name.<br/>**Default**: it_atm_pub_tran
 | `origin` | No | Name of the originating bus stop
 | `destination` | No | Name of the destination bus stop
 | `combination_id` | Yes | Name of the combination of timetables.<br/>**Default**: `ABCz`
@@ -112,9 +112,9 @@ Set the time to start searching for connections
 
 ## ADVANCED - parsing list description
 From the **detail attribute** you can access the attributes of the individual connections (there are 2 connections)
-### You can display them like that this example (for sensor entity_id sensor.cz_pub_tran)
+### You can display them like that this example (for sensor entity_id sensor.it_atm_pub_tran)
 ```yaml
-{{ states.sensor.cz_pub_tran.attributes["detail"][0] }}
+{{ states.sensor.it_atm_pub_tran.attributes["detail"][0] }}
 ```
 
 ### Result:
@@ -126,7 +126,7 @@ From the **detail attribute** you can access the attributes of the individual co
 ```yaml
 {% for index in [0,1] %}
 Connection {{index+1}}
-  {% for bus in states.sensor.cz_pub_tran.attributes["detail"][index] %}
+  {% for bus in states.sensor.it_atm_pub_tran.attributes["detail"][index] %}
     Line: {{ bus["line"] }}
     Departure time {{ bus["depTime"] }} from {{ bus["depStation"] }}
     Arrival time {{ bus["arrTime"] }} to {{ bus["arrStation"] }}

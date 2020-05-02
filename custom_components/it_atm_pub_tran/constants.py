@@ -1,5 +1,5 @@
 """
-Text constants for cz_pub_tran sensor
+Text constants for it_atm_pub_tran sensor
 """
 import voluptuous as vol
 from homeassistant.helpers import config_validation as cv
@@ -37,11 +37,11 @@ DESCRIPTION_LINE_NO_DELAY = {
 
 DESCRIPTION_FOOTER = {"text": "", "HTML": "\n</table>"}
 
-DOMAIN = "cz_pub_tran"
+DOMAIN = "it_atm_pub_tran"
 PLATFORM = "sensor"
 VERSION = "0.0.1"
 ISSUE_URL = "https://github.com/bruxy70/CZ-Public-Transport/issues"
-ATTRIBUTION = "Data from this is provided by cz_pub_tran."
+ATTRIBUTION = "Data from this is provided by it_atm_pub_tran."
 
 ENTITY_ID_FORMAT = PLATFORM + ".{}"
 
@@ -70,7 +70,7 @@ DEFAULT_SCAN_INTERVAL = timedelta(seconds=60)
 DEFAULT_FORCE_REFRESH_PERIOD = 5
 DEFAULT_DESCRIPTION_FORMAT = "text"
 DEFAULT_COMBINATION_ID = "ABCz"
-DEFAULT_NAME = "cz_pub_tran"
+DEFAULT_NAME = "it_atm_pub_tran"
 
 SENSOR_SCHEMA = vol.Schema(
     {

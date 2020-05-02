@@ -1,4 +1,4 @@
-"""Support for cz_pub_tran domain
+"""Support for it_atm_pub_tran domain
 The async_update connections checks all connections every minute
 If the connection is scheduled, it skips the update.
 But every 5 minutes it updates all connections regardless - to check on delay
@@ -43,7 +43,7 @@ STATUS_NO_CONNECTION = "-"
 
 
 async def async_setup(hass, config):
-    """Setup the cz_pub_tran platform."""
+    """Setup the it_atm_pub_tran platform."""
     if config.get(DOMAIN) is None:
         # We get here if the integration is set up using config flow
         _LOGGER.debug("no domain")
@@ -165,7 +165,7 @@ class ConnectionPlatform:
         return self.__session
 
     def handle_set_time(self, call):
-        """Handle the cz_pub_tran.set_time call"""
+        """Handle the it_atm_pub_tran.set_time call"""
         _time = call.data.get(ATTR_START_TIME)
         _entity_id = call.data.get(CONF_ENTITY_ID)
         if _time is None:

@@ -1,4 +1,4 @@
-"""Adds config flow for cz_pub_tran."""
+"""Adds config flow for it_atm_pub_tran."""
 from collections import OrderedDict
 from czpubtran.api import czpubtran
 import logging

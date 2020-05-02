@@ -1,9 +1,9 @@
 {
-  "name": "CZ Public Transport",
-  "domains": ["cz_pub_tran", "sensor"],
+  "name": "IT ATM Public Transport",
+  "domains": ["it_atm_pub_tran", "sensor"],
   "homeassistant": "0.109.0",
   "zip_release": true,
-  "filename": "cz_pub_tran.zip",  
-  "country": "CZ",
+  "filename": "it_atm_pub_tran.zip",  
+  "country": "IT",
   "iot_class": "Cloud Polling"
 }

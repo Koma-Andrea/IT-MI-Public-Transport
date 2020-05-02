@@ -1,0 +1,10 @@
+.storage
+automations.yaml
+configuration.yaml
+.HA_VERSION
+groups.yaml
+home-assistant_v2.db
+home-assistant.log
+scenes.yaml
+scripts.yaml
+secrets.yaml

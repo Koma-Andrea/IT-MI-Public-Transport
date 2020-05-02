@@ -1,4 +1,4 @@
-"""Support for cz_pub_tran sensors."""
+"""Support for it_atm_pub_tran sensors."""
 import voluptuous as vol
 import logging
 from homeassistant.helpers import config_validation as cv, discovery
